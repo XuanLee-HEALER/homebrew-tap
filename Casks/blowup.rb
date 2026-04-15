@@ -1,6 +1,6 @@
 cask "blowup" do
-  version "2.0.7"
-  sha256 "55808aed8b930bfec571e8fa37bc46d29c201c38bb7a44a5e530e9fb0396a2d0"
+  version "2.1.0"
+  sha256 "0dadcd93353c44860b822f5e26d6275fdc03b334106839bc6830841d5150ec0a"
 
   url "https://github.com/XuanLee-HEALER/blowup/releases/download/v#{version}/blowup_#{version}_aarch64.dmg"
   name "blowup"
