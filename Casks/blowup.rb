@@ -1,6 +1,6 @@
 cask "blowup" do
-  version "2.1.0"
-  sha256 "0dadcd93353c44860b822f5e26d6275fdc03b334106839bc6830841d5150ec0a"
+  version "2.1.1"
+  sha256 "081a900f24cdd57bb811a0496edace3dca482fdf869b72e701d2c48cbb1b2dc6"
 
   url "https://github.com/XuanLee-HEALER/blowup/releases/download/v#{version}/blowup_#{version}_aarch64.dmg"
   name "blowup"
@@ -11,14 +11,14 @@ cask "blowup" do
 
   app "blowup.app"
 
-  # blowup is not code-signed or notarized, so the DMG carries the
-  # com.apple.quarantine xattr. Gatekeeper then blocks the first
-  # launch with "damaged / cannot be opened". Strip the attribute
-  # after install so the app opens cleanly.
+  # blowup is not code-signed or notarized, so the DMG carries
+  # the com.apple.quarantine xattr. Gatekeeper then blocks the
+  # first launch with "damaged / cannot be opened". Strip the
+  # attribute after install so the app opens cleanly.
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-rd", "com.apple.quarantine", "#{appdir}/blowup.app"],
-                   must_succeed: false
+         args: ["-rd", "com.apple.quarantine", "#{appdir}/blowup.app"],
+         must_succeed: false
   end
 
   zap trash: [
